@@ -28,8 +28,9 @@ class SecondViewController: UIViewController {
     //MARK: - SetBasic
     private func setBasic() {
         view.addSubview(mainLabel)
+        view.backgroundColor = .white
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        mainLabel.backgroundColor = .label
+        mainLabel.backgroundColor = .clear
         mainLabel.textColor = .systemRed
         mainLabel.font = .boldSystemFont(ofSize: 25)
         mainLabel.text = "NAMJEONG CAMPUS"
