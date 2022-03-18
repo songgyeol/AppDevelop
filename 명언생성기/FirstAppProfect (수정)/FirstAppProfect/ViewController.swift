@@ -17,19 +17,19 @@ class ViewController: UIViewController {
     var quote = quotes
     
     
-//MARK: - Lifecycle
+    //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
         
     }
-//MARK: - SetUI
+    //MARK: - SetUI
     func setUI() {
         setBasic()
         setLayout()
     }
     
-//MARK: - SetBasic
+    //MARK: - SetBasic
     func setBasic() {
         [titleLabel,mainLabel,mainName,mainButton].forEach {
             view.addSubview($0)
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         mainButton.tintColor = .clear
         mainButton.addTarget(self, action: #selector(mainBTTapped(_:)), for: .touchUpInside)
     }
-//MARK: - SetLayout
+    //MARK: - SetLayout
     func setLayout() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
@@ -89,6 +89,7 @@ class ViewController: UIViewController {
             mainButton.widthAnchor.constraint(equalToConstant: 70)
         ])
     }
+    //MARK: - MainButtonTapped
     @objc func mainBTTapped(_ uibutton: Any) {
         //        let randomQuote = Int.random(in:0...4)
         if let quote = quotes.randomElement() {
@@ -96,8 +97,5 @@ class ViewController: UIViewController {
             self.mainName.text = quote.name
             
         }
-        
-        
-        
     }
 }
