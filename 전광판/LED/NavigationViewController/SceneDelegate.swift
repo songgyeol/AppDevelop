@@ -22,9 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let navVC = UINavigationController(rootViewController: rootVC)
         
-//        let navigationBar = UINavigationController()
-//        navigationBar.viewControllers = [secondVC]
-        
         window?.rootViewController = navVC
         window?.makeKeyAndVisible()
     }

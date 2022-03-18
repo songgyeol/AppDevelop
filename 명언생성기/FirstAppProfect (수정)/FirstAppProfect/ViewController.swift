@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     var quote = quotes
     
     
-    //MARK: - Lifecycle
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
         mainButton.tintColor = .clear
         mainButton.addTarget(self, action: #selector(mainBTTapped(_:)), for: .touchUpInside)
     }
-    //MARK: - SetLayout
+    //MARK: - SetLayOut
     func setLayout() {
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),

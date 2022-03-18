@@ -9,45 +9,43 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    
     let mainLabel = UILabel()
     
     
-    
+    //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setUI()
     }
     
-    
+    //MARK: - UI
     private func setUI() {
         confiureItem()
         setBasic()
         setLayout()
     }
+    
+    //MARK: - SetBasic
     private func setBasic() {
-        
         view.addSubview(mainLabel)
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
-        //mainLabel.center = view.center
         mainLabel.backgroundColor = .label
         mainLabel.textColor = .systemRed
         mainLabel.font = .boldSystemFont(ofSize: 25)
-        mainLabel.text = "NAMJEON CAMPUS"
+        mainLabel.text = "NAMJEONG CAMPUS"
         mainLabel.textAlignment = .center
     }
+    //MARK: - ThirdViewController ButtonTapped And Set
     private func confiureItem() {
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didTapButton))
-        
     }
-    
     @objc func didTapButton() {
         let vc = ThirdViewController()
         vc.title = "설 정"
         vc.view.backgroundColor = .white
         navigationController?.pushViewController(vc, animated: true)
     }
-    
+    //MARK: - SetLayOut
     private func setLayout() {
         NSLayoutConstraint.activate([
             mainLabel.topAnchor.constraint(equalTo: view.topAnchor, constant: 200),
