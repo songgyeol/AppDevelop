@@ -18,6 +18,7 @@ class SecondViewController: UIViewController {
         setUI()
     }
     
+    
     //MARK: - UI
     private func setUI() {
         confiureItem()

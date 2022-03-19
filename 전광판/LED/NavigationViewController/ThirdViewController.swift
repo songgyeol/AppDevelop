@@ -26,11 +26,12 @@ class ThirdViewController: UIViewController {
     
     let saveButton = UIButton()
     
+    
     //MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
-       setUI()
-       
+        setUI()
+        
     }
     //MARK: - UI
     private func setUI() {
