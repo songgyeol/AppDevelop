@@ -57,7 +57,7 @@ class SecondViewController: UIViewController {
             mainLabel.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
     }
-
+    
 }
 
 // MARK: - Selectors
@@ -65,8 +65,17 @@ class SecondViewController: UIViewController {
 
 
 extension SecondViewController: CustomTextFieldDelegate {
+    
+    func backgroundColorInput(didInput backColor: UIColor) {
+        view.backgroundColor = backColor
+    }
+    
     func textDidInput(didInput text: String) {
         mainLabel.text = text
     }
+    func textColorDidInput(didInput textColor: UIColor) {
+        mainLabel.textColor = textColor
+    }
+    
 }
 

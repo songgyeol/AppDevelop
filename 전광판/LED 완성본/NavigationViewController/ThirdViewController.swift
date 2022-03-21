@@ -10,6 +10,8 @@ import UIKit
 
 protocol CustomTextFieldDelegate: AnyObject {
     func textDidInput(didInput text: String)
+    func textColorDidInput(didInput Color: UIColor)
+    func backgroundColorInput(didInput backColor: UIColor)
 }
 
 
@@ -77,10 +79,13 @@ class ThirdViewController: UIViewController {
         //ButtonColor
         redButton.backgroundColor = .red
         redButton.layer.cornerRadius = 25 // 버튼크긱 높이,폭이 50이면 25로 맞춰주면 둥글게 설정 가능
+        redButton.addTarget(self, action: #selector(textRedButton(_:)), for: .touchUpInside)
         orangeButton.backgroundColor = .orange
         orangeButton.layer.cornerRadius = 25
+        orangeButton.addTarget(self, action: #selector(textOrangeButton(_:)), for: .touchUpInside)
         yellowButton.backgroundColor = .yellow
         yellowButton.layer.cornerRadius = 25
+        yellowButton.addTarget(self, action: #selector(textYellowButton(_:)), for: .touchUpInside)
         //BackGroundColorLabel
         backgrouncolorLabel.textColor = .black
         backgrouncolorLabel.font = .systemFont(ofSize: 20)
@@ -88,8 +93,11 @@ class ThirdViewController: UIViewController {
         backgrouncolorLabel.textAlignment = .center
         //BackGroundColor
         pinkBGButton.backgroundColor = .systemPink
+        pinkBGButton.addTarget(self, action: #selector(bgPinkButton(_:)), for: .touchUpInside)
         grayBGButton.backgroundColor = .gray
+        grayBGButton.addTarget(self, action: #selector(bgGrayButton(_:)), for: .touchUpInside)
         blackBGButton.backgroundColor = .black
+        blackBGButton.addTarget(self, action: #selector(bgBlackButton(_:)), for: .touchUpInside)
         pinkBGButton.layer.cornerRadius = 25
         grayBGButton.layer.cornerRadius = 25
         blackBGButton.layer.cornerRadius = 25
@@ -171,5 +179,31 @@ class ThirdViewController: UIViewController {
         
         //save누르면 SecondViewController로 넘거가는 코드
         self.navigationController?.popViewController(animated: true)
+    }
+    //MARK: - TextColorChanged
+    @objc func textRedButton(_ sender: UIButton) {
+        let textColor = UIColor.systemRed
+        self.delegate?.textColorDidInput(didInput: textColor)
+    }
+    @objc func textOrangeButton(_ sender: UIButton) {
+        let textColor = UIColor.systemOrange
+        self.delegate?.textColorDidInput(didInput: textColor)
+    }
+    @objc func textYellowButton(_ sender: UIButton) {
+        let textColor = UIColor.systemYellow
+        self.delegate?.textColorDidInput(didInput: textColor)
+    }
+    //MARK: - BackgroundColorChanged
+    @objc func bgPinkButton(_ sender: UIButton) {
+        let backColor = UIColor.systemPink
+        self.delegate?.backgroundColorInput(didInput: backColor)
+    }
+    @objc func bgGrayButton(_ sender: UIButton) {
+        let backColor = UIColor.systemGray
+        self.delegate?.backgroundColorInput(didInput: backColor)
+    }
+    @objc func bgBlackButton(_ sender: UIButton) {
+        let backColor = UIColor.black
+        self.delegate?.backgroundColorInput(didInput: backColor)
     }
 }
